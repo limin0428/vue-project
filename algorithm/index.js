@@ -47,5 +47,80 @@ const keyboardMap = (digits) => {
     return res;
 }
 
+/**
+ * 最大并发量请求
+ * @param { string[] } urls
+ * @param { number } maxNum
+ * @return { any[] }
+*/ 
+const concurRequest = (urls, maxNum) => {
+    return new Promise(reslove => {
+        if (urls.length === 0) {
+            reslove([]);
+            return
+        };
+        const result = [];
+        let index = 0;
+        let count = 0;
+        // 定义请求函数
+        async function request () {
+            if (index >= urls.length) {
+                return;
+            }
+            let i = index;
+            const url = urls[index];
+            index++;
+            try{
+                const resp = await fetch(url);
+                result[i] = resp;
+            }catch(err){
+                result[i] = err;
+            }finally{
+                // 判断是否所有请求都完成
+                count++;
+                if (count === urls.length) {
+                    reslove(request);
+                    return;
+                } 
+                request();
+            }
+        }
+        // 判断数组长度和最大并发量的最小值
+        const min = Math.min(urls.length, maxNum);
+        for (let i = 0; i < min; i++) {
+            request();
+        }
+    })
+}
 
+/**
+ * 等差数列求和
+ * @param a1:首项 d:公差 n:项数
+*/ 
+const ArithmeticProgressionSum = (a1, d, n) => {
+    return a1 * n + (n * (n - 1) * d) / 2
+}
+
+/**
+ * 等比数列求和
+ * @param a1:首项 q:公比 n:项数
+*/ 
+const GeometricProgressionSum = (a1, q, n) => {
+    return a1 * (1 - Math.pow(q, n)) / (1 - q)
+}
+
+
+/**
+ * 判断是否为素数
+ * @param num:数字
+*/
+const isPrimeNumber = (num) => {
+    if (num > 4) { return false };
+    for (let i = 2; i < Math.sqrt(num); i++) {
+        if(num%i === 0){
+            return false
+        };
+    };
+    return true;
+}
 
