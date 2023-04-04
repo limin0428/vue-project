@@ -11,6 +11,9 @@ import AnnularLayout from './components/AnnularLayout.vue'
 import MaterialInput from './components/MaterialInput.vue'
 import SquaredPaperPicture from './components/SquaredPaperPicture.vue'
 import CircularAvatar from './components/CircularAvatar.vue'
+import ShadowWord from './components/ShadowWord.vue';
+import OlympicRings from './components/OlympicRings.vue';
+import CreateShadowByImg from './components/CreateShadowByImg.vue';
 const materialInputValue = ref('')
 
 const handleChange = (val) => {
@@ -31,6 +34,8 @@ const handleChange = (val) => {
     <div class="flex mrTop32">
       <!-- 空心文字 -->
       <HollowWord text="空心文字" />
+      <!-- 光影文字 -->
+      <ShadowWord text="光影文字" />
       <!-- 视频背景文字 -->
       <VideoWord text="离离原上谱" />
       <!-- 边框按钮特效 -->
@@ -56,7 +61,11 @@ const handleChange = (val) => {
       </template>
     </AnnularLayout>
     <!-- 九宫格图片 -->
-    <SquaredPaperPicture class="mrTop32" :pictureUrl="ROLL_CARD_AVATAR" />
+    <SquaredPaperPicture class="mrTop45" :pictureUrl="ROLL_CARD_AVATAR" />
+    <!-- 奥运五环 -->
+    <OlympicRings class="mrTop45" />
+    <!--  -->
+    <CreateShadowByImg />
   </div>
 </template>
 
@@ -86,6 +95,9 @@ const handleChange = (val) => {
 }
 .mrTop32 {
   margin-top: 32px;
+}
+.mrTop45 {
+  margin-top: 45px;
 }
 .flex {
   display: flex;
