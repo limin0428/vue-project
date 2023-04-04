@@ -14,6 +14,7 @@ import CircularAvatar from './components/CircularAvatar.vue'
 import ShadowWord from './components/ShadowWord.vue';
 import OlympicRings from './components/OlympicRings.vue';
 import CreateShadowByImg from './components/CreateShadowByImg.vue';
+import GradualBorderCard from './components/GradualBorderCard.vue';
 const materialInputValue = ref('')
 
 const handleChange = (val) => {
@@ -64,8 +65,13 @@ const handleChange = (val) => {
     <SquaredPaperPicture class="mrTop45" :pictureUrl="ROLL_CARD_AVATAR" />
     <!-- 奥运五环 -->
     <OlympicRings class="mrTop45" />
-    <!--  -->
+    <!-- 图片转阴影 -->
     <CreateShadowByImg />
+    <!-- 渐变边框 -->
+    <GradualBorderCard class="mrTop24">
+      <h3>渐变边框</h3>
+      <p>支持自定义内容插槽</p>
+    </GradualBorderCard>
   </div>
 </template>
 
@@ -93,12 +99,12 @@ const handleChange = (val) => {
   justify-content: center;
   align-items: center;
 }
-.mrTop32 {
-  margin-top: 32px;
-}
-.mrTop45 {
-  margin-top: 45px;
-}
+@selectors: {24: 24px; 32: 32px; 45: 45px };
+each(@selectors, {
+  .mrTop@{key} {
+    margin-top: @value;
+  }
+});
 .flex {
   display: flex;
   flex-wrap: wrap;

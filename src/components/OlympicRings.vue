@@ -20,8 +20,8 @@ const COLOR_LIST = ["#52aadd", "#fbed56", "#000000", "#60b258", "#eb3323"];
 
 <style lang="less" scoped>
 .container {
-    width: 200px;
-    height: 90px;
+    width: 210px;
+    height: 110px;
   .olympic {
     position: relative;
     transform-style: preserve-3d;
