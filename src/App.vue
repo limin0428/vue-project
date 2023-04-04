@@ -1,7 +1,7 @@
 <script setup>
 // import HelloWorld from './components/HelloWorld.vue'
 import { ref } from 'vue'
-import { banners, annulars, ROLL_CARD_AVATAR } from './mock/mockData.js'
+import { banners, annulars, ROLL_CARD_AVATAR, DEFAULT_AVATER_URL } from './mock/mockData.js'
 import BannerList from './components/BannerList.vue'
 import BorderButton from './components/BorderButton.vue'
 import RollCard from './components/RollCard.vue'
@@ -15,6 +15,7 @@ import ShadowWord from './components/ShadowWord.vue';
 import OlympicRings from './components/OlympicRings.vue';
 import CreateShadowByImg from './components/CreateShadowByImg.vue';
 import GradualBorderCard from './components/GradualBorderCard.vue';
+import FrostedFilter from './components/FrostedFilter.vue';
 const materialInputValue = ref('')
 
 const handleChange = (val) => {
@@ -72,6 +73,8 @@ const handleChange = (val) => {
       <h3>渐变边框</h3>
       <p>支持自定义内容插槽</p>
     </GradualBorderCard>
+    <!-- 磨砂滤镜 -->
+    <FrostedFilter class="mrTop24" />
   </div>
 </template>
 
