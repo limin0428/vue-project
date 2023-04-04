@@ -10,7 +10,7 @@
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .card {
     background: repeating-linear-gradient(-45deg, #e8544d, #e8544d 10px, #fff 10px,  #fff 20px, #75adf5 20px, #75adf5 30px,  #fff 30px,  #fff 40px) -20px -20px;
     background-size: 200% 200%;
