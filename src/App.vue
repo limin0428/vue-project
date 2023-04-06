@@ -16,6 +16,7 @@ import OlympicRings from './components/OlympicRings.vue';
 import CreateShadowByImg from './components/CreateShadowByImg.vue';
 import GradualBorderCard from './components/GradualBorderCard.vue';
 import FrostedFilter from './components/FrostedFilter.vue';
+import StereoscopicWord from './components/StereoscopicWord.vue';
 const materialInputValue = ref('')
 
 const handleChange = (val) => {
@@ -75,6 +76,8 @@ const handleChange = (val) => {
     </GradualBorderCard>
     <!-- 磨砂滤镜 -->
     <FrostedFilter class="mrTop24" />
+    <!-- 立体文字 -->
+    <StereoscopicWord text="HELLO WORLD" class="mrTop24" />
   </div>
 </template>
 
